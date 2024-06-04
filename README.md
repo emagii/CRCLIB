@@ -33,3 +33,14 @@ https://github.com/lammertb/libcrc
 http://www.sunshine2k.de/coding/javascript/crc/crc_js.html
 
 
+Example of use:
+
+	if (init_algorithm(&algo, CRC64_ECMA)) {
+		uint64_t crc = calc_crc64 (&algo, "123456789", 9);
+	}
+
+The init_algorithm will initiate the "algo" descriptor from a table
+of algorithms using CRC64_ECMA as an index to the table.
+
+Whenever you calculate a CRC, you pass a pointer to the algorithm descriptor
+into the CRC calculation subroutine together with the input data and length.
